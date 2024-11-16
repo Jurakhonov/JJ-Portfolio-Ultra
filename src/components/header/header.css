@@ -1,0 +1,206 @@
+.venileplate {
+  /*need to rotate*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inner__circles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.inner__circles--1,
+.inner__circles--2,
+.inner__circles--3,
+.inner__circles--4,
+.inner__circles--5,
+.progress-ring {
+  position: absolute;
+}
+.logoh,
+.logobrownh {
+  z-index: 105;
+  transition: 0.3s;
+  width: 100px;
+  height: 100px;
+}
+.inner__circles--1,
+.inner__circles--2,
+.inner__circles--3,
+.inner__circles--4,
+.inner__circles--5,
+.progress-ring--dashed,
+.rotate-baby,
+.logoh,
+.logobrownh {
+  position: absolute;
+  animation: cicle-dance 10s linear infinite;
+}
+@keyframes cicle-dance {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.move-to-mainh {
+  z-index: 106;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #00000000;
+}
+.color__boxh {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.move-to-mainh:hover ~ .color__boxh {
+  background: #752e2e;
+}
+.logoh {
+  opacity: 1;
+}
+.logobrownh {
+  opacity: 0;
+}
+.move-to-mainh:hover ~ .logoh {
+  opacity: 0;
+}
+.move-to-mainh:hover ~ .logobrownh {
+  opacity: 1;
+}
+
+/******************************/
+
+.header {
+    background: linear-gradient(45deg, #1a1811, #3a3e55);
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s ease infinite;
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+.hidemark {
+  width: 310px;
+  height: 100px;
+  background: #000;
+  position: fixed;
+  bottom: 40px;
+}
+.header__logo {
+  width: 100px;
+  height: 100px;
+  background: #180c0c00;
+  border-radius: 50%;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-evenly;
+}
+li {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.menu__link {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 64px;
+}
+.dot {
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+}
+.nav {
+  display: flex;
+  position: absolute;
+  top: 94px;
+  left: 42.4px;
+  gap: 64px;
+}
+
+.wallpaper {
+  /* background: #000; */
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  padding-top: 60px;
+}
+.link__obj1:hover ~ .wallpaper__0 {
+  background: #000;
+}
+.wallpaper__0,
+.wallpaper__1,
+.wallpaper__2 {
+  transform-origin: center; /* Центр для вертикальной анимации */
+  width: 100%; /* Ширина фиксированная */
+  height: 216px; /* Высота будет анимироваться с помощью scaleY */
+  background-color: transparent; /* Прозрачный фон по умолчанию */
+  /* position: absolute; */
+}
+.wallpaper__0.active {
+  background-image: url(../../assets/cvvvv.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.wallpaper__1.active {
+  background-image: url(../../assets/wrk.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.wallpaper__2.active {
+  background-image: url(../../assets/cntc.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.menu__link.link-active {
+  /* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
+  color: #f39c12; /* Цвет ссылки при активации */
+  font-weight: bold; /* Выделение ссылки */
+  /* transition: 0.3s; */
+}
+.header__logo.active,
+.arrow.active {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dot.active {
+  opacity: 0; /* Hide the dot when hovered */
+  transition: opacity 0.3s ease;
+}

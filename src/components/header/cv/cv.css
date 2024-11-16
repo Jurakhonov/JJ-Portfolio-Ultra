@@ -1,0 +1,185 @@
+.cv {
+  width: 100%;
+  height: 100vh;
+  background: #3a3e55;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+  background: linear-gradient(45deg, #1a1811, #3a3e55);
+  background-size: 200% 200%;
+  animation: gradientAnimation 5s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.cv__photo {
+  width: 50vh;
+  height: 50vh;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: inset 0 0 100px 100px #16192a;
+  border: 3px solid #ffffff;
+  transition: transform 2s; /* Для плавного завершения анимации */
+}
+.img {
+  position: relative;
+  max-width: max-content;
+}
+.cv__data {
+  width: 50%;
+  height: 0; /* Начальная высота для анимации */
+  background: #1a1811;
+  padding: 25px;
+  border-radius: 25px;
+  animation: cvdata 2s ease forwards;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #fff; /* Исправлено: 'easy' заменено на 'ease' */
+}
+
+@keyframes cvdata {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    height: 670px;
+    opacity: 1;
+  }
+}
+.skils,
+.lang,
+.edu,
+.my__data,
+.exp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* justify-content: space-between; */
+  gap: 30px;
+  animation: cvdata 2s ease forwards;
+}
+.title {
+}
+.skils__list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 700px;
+  gap: 10px;
+}
+.skils__each {
+  font-size: 16px;
+  padding: 5px;
+  background: #35393b;
+  border-radius: 5px;
+  transition: 0.1s;
+}
+.skils__each:hover {
+  background: #0f702e;
+  box-shadow: 0 0px 4px 4px #035e0e;
+}
+.header__logo--cv {
+  position: absolute;
+  top: 179px;
+  left: 179px;
+}
+.inner__crcles--1,
+.inner__crcles--3 {
+  display: none;
+}
+.inner__crcles--2 {
+  height: 420px;
+  border-radius: 50%;
+}
+.venileplate {
+  /*need to rotate*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inner__crcles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.inner__crcles--1,
+.inner__crcles--2,
+.inner__crcles--3,
+.inner__crcles--4,
+.inner__crcles--5,
+.progress-ring {
+  position: absolute;
+}
+.logoh,
+.logobrownh {
+  z-index: 105;
+  transition: 0.3s;
+  width: 100px;
+  height: 100px;
+}
+.inner__crcles--1,
+.inner__crcles--2,
+.inner__crcles--3,
+.inner__crcles--4,
+.inner__crcles--5,
+.progress-ring--dashed,
+.rotate-baby,
+.logoh,
+.logobrownh {
+  position: absolute;
+  animation: cicle-dance 10s linear infinite;
+}
+@keyframes cicle-dance {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.move-to-mainh {
+  z-index: 106;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #00000000;
+}
+.color__boxh {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.move-to-mainh:hover ~ .color__boxh {
+  background: #752e2e;
+}
+.logoh {
+  opacity: 1;
+}
+.logobrownh {
+  opacity: 0;
+}
+.move-to-mainh:hover ~ .logoh {
+  opacity: 0;
+}
+.move-to-mainh:hover ~ .logobrownh {
+  opacity: 1;
+}
